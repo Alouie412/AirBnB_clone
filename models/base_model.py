@@ -6,13 +6,27 @@ import datetime
 
 
 class BaseModel:
-    """ BaseModel class initialization. Creates 5 objects """
-    def __init__(self):
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.datetime.today()
-        self.updated_at = datetime.datetime.today()
-        self.my_number = 0
-        self.name = ""
+    """ BaseModel class initialization. Creates 5 objects.
+    Supports args and kwargs, converting from string to datetime """
+    def __init__(self, *args, **kwargs):
+        elif len(kwargs) is not 0:
+            for key, value in kwargs.items():
+                if key in "id":
+                    self.id = value
+                elif key in "created_at":
+                    self.created_at = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                elif key in "updated_at":
+                    self.updated_at = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                elif key in "my_number":
+                    self.my_number = value
+                elif key in "name":
+                    self.name = value
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.datetime.today()
+            self.updated_at = datetime.datetime.today()
+            self.my_number = 0
+            self.name = ""
 
     def __str__(self):
         """ String modifier method """
