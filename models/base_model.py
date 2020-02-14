@@ -9,7 +9,7 @@ class BaseModel:
     """ BaseModel class initialization. Creates 5 objects.
     Supports args and kwargs, converting from string to datetime """
     def __init__(self, *args, **kwargs):
-        elif len(kwargs) is not 0:
+        if len(kwargs) is not 0:
             for key, value in kwargs.items():
                 if key in "id":
                     self.id = value
