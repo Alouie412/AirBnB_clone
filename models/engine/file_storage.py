@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" This file imports code from json and pathlib """
+""" This file imports code from json, datetime, and pathlib """
 import json
+import datetime
 from pathlib import Path
 """ FileStorage class. Stores stuff into a JSON file """
 
@@ -14,7 +15,7 @@ class FileStorage:
         self.__objects = {}
 
     def all(self):
-        """ All method. Simply returns the dictionray """
+        """ All method. Simply returns the dictionary """
         return self.__objects
 
     def new(self, obj):
@@ -28,9 +29,20 @@ class FileStorage:
                              default=lambda x: getattr(x, '__dict__',
                                                        str(x.isoformat())))
 
+    def date_hook(json_dict):
+        """ Date_hook method. Used in reload method to convert
+        the string in ISO format to datetime format """
+        for key, value in json_dict.items():
+            try:
+                json_dict[key] = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+            except:
+                pass
+        return json_dict
+
     def reload(self):
         """ Reload method. Loads/deserializes the dictionary from
         our JSON file """
+        dumped_dict = {}
         if Path(self.__file_path).is_file():
             with open(self.__file_path, 'r') as f:
-                self.__objects = json.load(f)
+                self.__objects = json.load(f, object_hook=FileStorage.date_hook)
