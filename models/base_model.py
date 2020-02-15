@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-""" This file imports code found in uuid and datetime """
+""" This file imports code found in uuid and datetime
+as well as the variable storage from __init__.py """
 import uuid
 import datetime
-""" BaseModel class. The foundation for other classes """
+from models.__init__ import storage
+""" base_model.py """
 
 
 class BaseModel:
-    """ BaseModel class initialization. Creates 5 objects.
-    Supports args and kwargs, converting from string to datetime """
+    """ BaseModel class. The foundation for other classes """
     def __init__(self, *args, **kwargs):
+        """ Initialization method. Creates 5 objects.
+        Supports args and kwargs, as well as conversion between string
+        and datetime. Also creates a new instance """
         if len(kwargs) is not 0:
             for key, value in kwargs.items():
                 if key in "id":
@@ -27,15 +31,17 @@ class BaseModel:
             self.updated_at = datetime.datetime.today()
             self.my_number = 0
             self.name = ""
+            storage.new(self)
 
     def __str__(self):
-        """ String modifier method """
+        """ String modifier method. Prints the following format """
         return ("[{}] ({}) {}".format(__class__.__name__, self.id,
                 self.__dict__))
 
     def save(self):
         """ Save method. Updates the attribute updated_at """
         self.updated_at = datetime.datetime.today()
+        storage.save()
 
     def to_dict(self):
         """ to_dict method. Converts to dictionary format """
