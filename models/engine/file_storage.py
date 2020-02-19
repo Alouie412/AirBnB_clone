@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ This file imports code from json, datetime, and pathlib """
-import json, datetime, os, sys
-#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('base_model'))))
+import json
+import datetime
+import sys
 sys.path.append('..')
 from pathlib import Path
 from models.base_model import BaseModel
