@@ -26,25 +26,15 @@ class FileStorage:
 
     def save(self):
         """ Save method. Saves/serializes the dictionary to our JSON file """
-        print("Now testing\n")
-        print(self.__objects)
-        print("\nThe end\n")
         for key, value in self.__objects.items():
             temp = self.__objects[key]
-            print(temp)
             try:
                 temp = temp.split(" ")
                 temp = temp[2:]
                 temp = ' '.join(temp)
-                print(temp)
                 self.__objects.update({key: temp})
             except:
-                print("Failed try")
-                #pass
-
-        print("Now Testing again\n")
-        print(self.__objects)
-        print("\nThe end\n")
+                pass
 
         with open(self.__file_path, 'w') as f:
             return json.dump(self.__objects, f,
