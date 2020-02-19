@@ -12,21 +12,16 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, line):
-        """Quit command. Exits the program
-        """
-        #print("")
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, line):
-        """EOF command. Exits the program
-        """
-        #print("")
+        """EOF command to exit the program"""
+        print()
         return True
 
     def do_create(self, line):
-        """ Create command. Creates a new instance, saves to
-        JSON file, and prints the id. Must be create BaseModel
-        """
+        """Create command. Creates a new instance"""
         if len(line) is 0:
             print("** class name missing **")
         elif line not in class_list:
@@ -37,9 +32,7 @@ class HBNBCommand(cmd.Cmd):
             print(line.id)
 
     def do_show(self, line):
-        """ Show command. Displays information based on the
-        class name and id, if valid
-        """
+        """Show command. Displays class name, id, and info"""
         if len(line) is 0:
             print("** class name missing **")
             return
@@ -58,8 +51,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** no instance found **")
 
-
     def do_destroy(self, line):
+        """Destroy command. Removes from the dictionary"""
         if len(line) is 0:
             print("** class name missing **")
             return
@@ -78,6 +71,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, line):
+        """All command. Prints all contents or only of class"""
         new_list = []
         all_objs = storage.all()
         if len(line) is 0:
@@ -94,17 +88,19 @@ class HBNBCommand(cmd.Cmd):
             print(new_list)
 
     def do_update(self, line, value, attribute, att_content):
+        """Update command. Updates the dictionary"""
         if len(line) is 0:
             print("** class name missing **")
-        elif line not in classes:
+        line = line.split(" ")
+        if line[0] not in classes:
             print("** class doesn't exist **")
-        elif len(value) is 0:
+        elif len(line) is 2:
             print("** instance id missing **")
-        elif value not in line.id:
+        elif len(line) is 3:
             print("** no instance found **")
-        elif len(attribute) is 0:
+        elif len(line) is 4:
             print("** attribute name missing **")
-        elif len(att_content) is 0:
+        elif len(line) is 5:
             print("** value missing **")
         else:
             print("Will implement later")
