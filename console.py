@@ -92,8 +92,6 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             all_inst = storage.all()
-            print(all_inst)
-            print("")
             for obj_id in all_inst.keys():
                 check_inst = obj_id.split(".")
                 if line == check_inst[0]:
