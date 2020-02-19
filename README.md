@@ -99,4 +99,4 @@ vagrant@vagrant-ubuntu-trusty-64:~/AirBnB_clone$
 
 ## Authors
 
-Anthony Louie (https://github.com/Alouie412)
+[Anthony Louie](https://github.com/Alouie412)
