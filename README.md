@@ -96,3 +96,7 @@ EOF command to exit the program
 (hbnb) quit
 vagrant@vagrant-ubuntu-trusty-64:~/AirBnB_clone$
 ```
+
+## Authors
+
+Anthony Louie (https://github.com/Alouie412)
