@@ -40,6 +40,7 @@ class BaseModel:
     def to_dict(self):
         """ to_dict method. Converts to dictionary format """
         to_new_dict = self.__dict__.copy()
+        to_new_dict['__class__'] = self.__class__.__name__
         to_new_dict['created_at'] = self.created_at.isoformat()
         to_new_dict['updated_at'] = self.updated_at.isoformat()
         return to_new_dict
