@@ -5,7 +5,7 @@ from models import storage
 from models.base_model import BaseModel
 """ console.py """
 
-classes = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
+class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
 
 class HBNBCommand(cmd.Cmd):
     """ HBNBCommand method. The console and master driving program """
@@ -27,10 +27,9 @@ class HBNBCommand(cmd.Cmd):
         """ Create command. Creates a new instance, saves to
         JSON file, and prints the id. Must be create BaseModel
         """
-        print(line)
         if len(line) is 0:
             print("** class name missing **")
-        elif line not in classes:
+        elif line not in class_list:
             print("** class doesn't exist **")
         else:
             line = BaseModel()
@@ -45,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         line = line.split(" ")
-        if line[0] not in classes:
+        if line[0] not in class_list:
             print("** class doesn't exist **")
             return
         if len(line) is 1:
@@ -65,37 +64,33 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         line = line.split(" ")
-        if line[0] not in classes:
+        if line[0] not in class_list:
             print("** class doesn't exist **")
             return
         if len(line) is 1:
             print("** instance id missing **")
             return
-        #if value not in line.id:
-        #    print("** no instance found **")
-        with open('file.json', 'w') as overwrite:
-            with open('file.json', 'r') as source:
-                for text in source:
-                    element = json.loads(text.strip())
-                    if line in element:
-                        del element[line]
-                    overwrite.write(json.dumps(element))
+        try:
+            key = line[0] + '.' + line[1]
+            del storage.all()[key]
+            storage.save()
+        except:
+            print("** no instance found **")
 
     def do_all(self, line):
         new_list = []
+        all_objs = storage.all()
         if len(line) is 0:
-            all_inst = storage.all()
-            for obj_id in all_inst.keys():
-                new_list.append(all_inst[obj_id])
+            for key, value in all_objs.items():
+                new_list.append(str(value))
             print(new_list)
-        elif line not in classes:
+        elif line not in class_list:
             print("** class doesn't exist **")
         else:
             all_inst = storage.all()
-            for obj_id in all_inst.keys():
-                check_inst = obj_id.split(".")
-                if line == check_inst[0]:
-                    new_list.append(all_inst[obj_id])
+            for key, value in all_inst.items():
+                if str(key.split('.')[0]) == line.split()[0]:
+                    new_list.append(str(value))
             print(new_list)
 
     def do_update(self, line, value, attribute, att_content):
