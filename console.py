@@ -86,7 +86,8 @@ class HBNBCommand(cmd.Cmd):
         if len(line) is 0:
             for key, value in all_objs.items():
                 new_list.append(str(value))
-            print(new_list)
+            if len(new_list) != 0:
+                print(new_list)
         elif line not in class_list:
             print("** class doesn't exist **")
         else:
