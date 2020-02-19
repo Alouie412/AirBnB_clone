@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 """ This file imports the cmd module """
-import cmd, json
+import cmd
+import json
 from models import storage
 from models.base_model import BaseModel
 """ console.py """
 
-class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
+class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place',
+              'Review']
+
 
 class HBNBCommand(cmd.Cmd):
     """ HBNBCommand method. The console and master driving program """
