@@ -36,9 +36,10 @@ class HBNBCommand(cmd.Cmd):
         elif line not in class_list:
             print("** class doesn't exist **")
         else:
-            line = BaseModel()
-            line.save()
-            print(line.id)
+            newline = line.split()
+            newline = eval(newline[0] + '()')
+            newline.save()
+            print(newline.id)
 
     def do_show(self, line):
         """Show command. Displays class name, id, and info"""
