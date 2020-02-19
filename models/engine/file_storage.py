@@ -4,6 +4,7 @@ import json, datetime, os, sys
 #sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('base_model'))))
 sys.path.append('..')
 from pathlib import Path
+from models.base_model import BaseModel
 """ FileStorage class. Stores stuff into a JSON file """
 
 
@@ -63,7 +64,6 @@ class FileStorage:
     def reload(self):
         """ Reload method. Loads/deserializes the dictionary from
         our JSON file """
-        import models
         new_dict = {}
         if Path(self.__file_path).is_file():
             with open(self.__file_path, 'r') as f:
