@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-
+""" place.py """
 from models.base_model import BaseModel
 
 
-class Place:
+class Place(BaseModel):
+    """ Place class. Inherits BaseModel """
     city_id = ""
     user_id = ""
     name = ""

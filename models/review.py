@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-
+""" review.py """
 from models.base_model import BaseModel
 
 
-class Review:
+class Review(BaseModel):
+    """ Review class. Inherits BaseModel """
     place_id = ""
     user_id = ""
     text = ""
