@@ -1,8 +1,8 @@
 .filters {
     background-color: white;
     height: 70px;
-    width: 100vw;
-    border: 1px #DDDDDD;
+    width: 100%;
+    border: 1px solid #DDDDDD;
     border-radius: 4px;
     display: flex;
 }
@@ -17,6 +17,8 @@ button {
     border-radius: 4px;
     right: 30px;
     transform: translateY(-50%);
+}
+
+button:hover {
     opacity: 0.9;
-    transition: 0.3s;
 }
