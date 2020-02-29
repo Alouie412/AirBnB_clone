@@ -12,5 +12,6 @@ body {
     margin-bottom: 100px;
     max-width: 1000px;
     position: relative;
+    padding: 0% 5px;
     text-align: center;
 }
