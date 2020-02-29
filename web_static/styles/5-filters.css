@@ -28,7 +28,7 @@ button:hover {
 .locations {
     height: 100%;
     width: 25%;
-    border: right #DDDDDD 1px;
+    border-right: 1px solid #DDDDDD;
     float: left;
     text-align: left;
 }
