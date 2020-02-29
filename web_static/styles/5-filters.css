@@ -28,12 +28,14 @@ button:hover {
 .locations {
     height: 100%;
     width: 25%;
+    text-align: left;
     border-right: 1px solid #DDDDDD;
 }
 
 .amenities {
     height: 100%;
     width: 25%;
+    text-align: left;
 }
 
 h3 {
