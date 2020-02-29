@@ -29,12 +29,14 @@ button:hover {
     height: 100%;
     width: 25%;
     border: right #DDDDDD 1px;
+    float: left;
     text-align: left;
 }
 
 .amenities {
     height: 100%;
     width: 25%;
+    float: left;
     text-align: left;
 }
 
