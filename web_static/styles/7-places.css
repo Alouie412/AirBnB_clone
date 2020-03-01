@@ -1,7 +1,7 @@
 .places {
     display: flex;
-    align-items: flex-start;
-    font-size: 30px;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .article {
@@ -12,7 +12,11 @@
     border-radius: 4px;
 }
 
+.place h1 {
+    font-size: 30px;
+}
+
 .article h2 {
-    font-fize: 30px;
+    font-size: 30px;
     text-align: center;
 }
