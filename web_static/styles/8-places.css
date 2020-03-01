@@ -23,11 +23,12 @@
     font-size: 30px;
     text-align: center;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .places h2:hover {
-    overflow: scroll;
+    overflow: visible;
 }
 
 .price_by_night {
@@ -38,7 +39,7 @@
     height: 60px;
     font-size: 30px;
     position: relative;
-    top: -70px;
+    top: -65px;
     float: right;
     line-height: 60px;
 }
