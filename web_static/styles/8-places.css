@@ -60,7 +60,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../images/icon_group.png");
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .number_rooms {
@@ -68,7 +68,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../images/icon_bed.png");
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .number_bathrooms {
@@ -76,7 +76,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../images/icon_bath.png");
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .user {
