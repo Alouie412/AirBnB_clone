@@ -22,7 +22,7 @@
 .places h2 {
     font-size: 30px;
     text-align: center;
-    overflow: hidden;
+    white-space: inherit;
     text-overflow: ellipsis;
 }
 
@@ -38,7 +38,7 @@
     height: 60px;
     font-size: 30px;
     position: relative;
-    top: -60px;
+    top: -65px;
     float: right;
     line-height: 60px;
 }
