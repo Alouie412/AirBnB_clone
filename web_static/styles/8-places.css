@@ -22,6 +22,11 @@
 .places h2 {
     font-size: 30px;
     text-align: center;
+    text-overflow: ellipsis;
+}
+
+.places h2:hover {
+    overflow: visible;
 }
 
 .price_by_night {
