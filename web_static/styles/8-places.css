@@ -29,7 +29,7 @@
 }
 
 .places h2:hover {
-    overflow: scroll;
+    overflow: scroll, visible;
 }
 
 .price_by_night {
