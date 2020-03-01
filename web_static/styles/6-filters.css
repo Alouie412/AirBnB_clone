@@ -64,6 +64,7 @@ h4 {
     z-index: 1;
     display: none;
     position: relative;
+    padding: 2;
 }
 
 li {
