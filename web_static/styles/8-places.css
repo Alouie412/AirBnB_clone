@@ -50,6 +50,9 @@
     height: 80px;
     border-top: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .max_guest {
