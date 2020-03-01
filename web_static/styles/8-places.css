@@ -25,10 +25,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 20px;
 }
 
 .places h2:hover {
-    overflow: visible;
+    overflow: scroll;
 }
 
 .price_by_night {
