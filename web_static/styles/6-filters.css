@@ -55,6 +55,13 @@ h4 {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     list-style-type: none;
+    z-index: 1;
+    display: none;
+    position: absolute;
+}
+
+li {
+    list-style-type: none;
 }
 
 .locations:hover .popover{
