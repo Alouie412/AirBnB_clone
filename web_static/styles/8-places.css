@@ -26,7 +26,7 @@
 }
 
 .places h2:hover {
-    overflow: visible;
+    overflow: scroll;
 }
 
 .price_by_night {
@@ -37,7 +37,7 @@
     height: 60px;
     font-size: 30px;
     position: relative;
-    top: -30px;
+    top: -50px;
     float: right;
     line-height: 60px;
 }
