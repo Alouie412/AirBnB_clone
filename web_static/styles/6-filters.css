@@ -41,6 +41,7 @@ button:hover {
 
 h2 {
     font-size: 16px;
+    margin: 0px;
 }
 
 h3 {
@@ -69,6 +70,7 @@ h4 {
 
 li {
     list-style-type: none;
+    margin: 10px;
 }
 
 .locations:hover .popover{
