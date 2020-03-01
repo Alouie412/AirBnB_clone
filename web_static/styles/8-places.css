@@ -29,7 +29,8 @@
 }
 
 .places h2:hover {
-    overflow: auto;
+    word-wrap: break-word;
+    overflow: visible;
 }
 
 .price_by_night {
