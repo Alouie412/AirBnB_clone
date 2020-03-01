@@ -56,18 +56,21 @@
     width: 100px;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url("../images/icon_group.png");
 }
 
 .number_rooms {
     width: 100px;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url("../images/icon_bed.png");
 }
 
 .number_bathrooms {
     width: 100px;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url("../images/icon_bath.png");
 }
 
 .user {
