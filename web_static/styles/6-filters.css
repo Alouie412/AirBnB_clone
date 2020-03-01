@@ -37,7 +37,7 @@ button:hover {
     height: 100%;
     width: 25%;
     text-align: left;
-    float: left;
+    margin: 0px 50px;
 }
 
 h2 {
